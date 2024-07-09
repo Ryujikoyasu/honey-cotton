@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             date: "5/1",
             sources: ["さくら", "れんげ"],
-            description: "さくらの淡いピンク色と、れんげの優しい甘みが特徴的な蜂蜜です。さくらの香りが春の訪れを感じさせます。"
+            description: "さくらの淡いピンク色と、れんげの優しい甘みが特徴的な蜂蜜です。さくらの香りが春の訪れを感じさせます。",
             images: [
                 "/api/placeholder/300/300?text=さくら蜂蜜",
                 "/api/placeholder/300/300?text=れんげ蜂蜜",
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             date: "5/8",
             sources: ["アカシア", "菜の花"],
-            description: "アカシアの爽やかな香りと、菜の花の明るい黄色が印象的な蜂蜜です。クセがなく、さっぱりとした味わいが特徴です。"
+            description: "アカシアの爽やかな香りと、菜の花の明るい黄色が印象的な蜂蜜です。クセがなく、さっぱりとした味わいが特徴です。",
             images: [
                 "/api/placeholder/300/300?text=さくら蜂蜜",
                 "/api/placeholder/300/300?text=れんげ蜂蜜",
