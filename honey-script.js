@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
             honeyItem.className = 'honey-item';
             honeyItem.style.backgroundColor = honey.color;
             honeyItem.innerHTML = `
-                <h3>${honey.date}の蜂蜜</h3>
-                <p>蜜源植物: ${honey.sources.join('、')}</p>
+                <h3>${honey.date}</h3>
+                <p>${honey.sources.join('、')}</p>
             `;
             honeyItem.addEventListener('click', () => showPopup(index));
             honeyGrid.appendChild(honeyItem);
@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generateHoneyGrid();
     generateCalendar();
+    createBees(10); // 5匹の蜂を生成
 
     window.sendMessage = function() {
         const userInput = document.getElementById('user-input').value;
@@ -181,13 +182,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-
     document.querySelectorAll('.honey-item').forEach((item, index) => {
         item.addEventListener('click', () => showPopup(index));
     });
 
     document.querySelector('#chat-container button').addEventListener('click', sendMessage);
     
-    createBees(10); // 5匹の蜂を生成
     
 });
