@@ -191,6 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('DOMContentLoaded', function() {
         // ... 既存のコード ...
     
-        createBees(5); // 5匹の蜂を生成
+        createBees(100); // 5匹の蜂を生成
     });
 });
