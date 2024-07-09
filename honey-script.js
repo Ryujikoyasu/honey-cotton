@@ -31,36 +31,36 @@ document.addEventListener('DOMContentLoaded', function() {
             beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
 
         },
-        {
-            date: "5/15",
-            sources: ["クローバー", "りんご"],
-            description: "クローバーのまろやかな甘さと、りんごの軽やかな酸味が調和した蜂蜜です。淡い琥珀色で、香りも豊かです。"
-            images: [
-                "/api/placeholder/300/300?text=さくら蜂蜜",
-                "/api/placeholder/300/300?text=れんげ蜂蜜",
-                "/api/placeholder/300/300?text=商品外観"
-            ],
-            sourceImages: [
-                {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
-                {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
-            ],
-            beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
-        },
-        {
-            date: "5/22",
-            sources: ["トチノキ", "ライラック"],
-            description: "トチノキの濃厚な味わいと、ライラックの華やかな香りが特徴的な蜂蜜です。深みのある琥珀色をしています。"
-            images: [
-                "/api/placeholder/300/300?text=さくら蜂蜜",
-                "/api/placeholder/300/300?text=れんげ蜂蜜",
-                "/api/placeholder/300/300?text=商品外観"
-            ],
-            sourceImages: [
-                {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
-                {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
-            ],
-            beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
-        },
+        // {
+        //     date: "5/15",
+        //     sources: ["クローバー", "りんご"],
+        //     description: "クローバーのまろやかな甘さと、りんごの軽やかな酸味が調和した蜂蜜です。淡い琥珀色で、香りも豊かです。"
+        //     images: [
+        //         "/api/placeholder/300/300?text=さくら蜂蜜",
+        //         "/api/placeholder/300/300?text=れんげ蜂蜜",
+        //         "/api/placeholder/300/300?text=商品外観"
+        //     ],
+        //     sourceImages: [
+        //         {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
+        //         {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
+        //     ],
+        //     beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
+        // },
+        // {
+        //     date: "5/22",
+        //     sources: ["トチノキ", "ライラック"],
+        //     description: "トチノキの濃厚な味わいと、ライラックの華やかな香りが特徴的な蜂蜜です。深みのある琥珀色をしています。"
+        //     images: [
+        //         "/api/placeholder/300/300?text=さくら蜂蜜",
+        //         "/api/placeholder/300/300?text=れんげ蜂蜜",
+        //         "/api/placeholder/300/300?text=商品外観"
+        //     ],
+        //     sourceImages: [
+        //         {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
+        //         {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
+        //     ],
+        //     beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
+        // },
         // {
         //     date: "5/29",
         //     sources: ["ニセアカシア", "柑橘類"],
