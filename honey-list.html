@@ -66,17 +66,77 @@
             z-index: 1000;
         }
         .popup-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            max-width: 80%;
-            max-height: 80%;
-            overflow-y: auto;
+        background-color: #fff9e6;
+        border-radius: 15px;
+        overflow: hidden;
+        max-width: 800px;
+        width: 90%;
         }
+        .popup-header {
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .popup-header h2 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 0;
+        }
+        .popup-body {
+            padding: 20px;
+        }
+        .honey-images {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .honey-images img {
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .source-plants {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .source-plant {
+            width: 45%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .source-plant img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .beekeeper-message {
+            background-color: #fff;
+            border-left: 5px solid #ffd700;
+            padding: 15px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        .popup-content button {
+            background-color: #ffd700;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 20px auto;
+        }
+        .popup-content button:hover {
+            background-color: #ffcc00;
+        }
+
         #calendar {
             margin-top: 20px;
         }

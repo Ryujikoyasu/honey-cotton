@@ -4,50 +4,112 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "5/1",
             sources: ["さくら", "れんげ"],
             description: "さくらの淡いピンク色と、れんげの優しい甘みが特徴的な蜂蜜です。さくらの香りが春の訪れを感じさせます。"
+            images: [
+                "/api/placeholder/300/300?text=さくら蜂蜜",
+                "/api/placeholder/300/300?text=れんげ蜂蜜",
+                "/api/placeholder/300/300?text=商品外観"
+            ],
+            sourceImages: [
+                {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
+                {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
+            ],
+            beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
         },
         {
             date: "5/8",
             sources: ["アカシア", "菜の花"],
             description: "アカシアの爽やかな香りと、菜の花の明るい黄色が印象的な蜂蜜です。クセがなく、さっぱりとした味わいが特徴です。"
+            images: [
+                "/api/placeholder/300/300?text=さくら蜂蜜",
+                "/api/placeholder/300/300?text=れんげ蜂蜜",
+                "/api/placeholder/300/300?text=商品外観"
+            ],
+            sourceImages: [
+                {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
+                {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
+            ],
+            beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
+
         },
         {
             date: "5/15",
             sources: ["クローバー", "りんご"],
             description: "クローバーのまろやかな甘さと、りんごの軽やかな酸味が調和した蜂蜜です。淡い琥珀色で、香りも豊かです。"
+            images: [
+                "/api/placeholder/300/300?text=さくら蜂蜜",
+                "/api/placeholder/300/300?text=れんげ蜂蜜",
+                "/api/placeholder/300/300?text=商品外観"
+            ],
+            sourceImages: [
+                {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
+                {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
+            ],
+            beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
         },
         {
             date: "5/22",
             sources: ["トチノキ", "ライラック"],
             description: "トチノキの濃厚な味わいと、ライラックの華やかな香りが特徴的な蜂蜜です。深みのある琥珀色をしています。"
+            images: [
+                "/api/placeholder/300/300?text=さくら蜂蜜",
+                "/api/placeholder/300/300?text=れんげ蜂蜜",
+                "/api/placeholder/300/300?text=商品外観"
+            ],
+            sourceImages: [
+                {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
+                {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
+            ],
+            beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
         },
-        {
-            date: "5/29",
-            sources: ["ニセアカシア", "柑橘類"],
-            description: "ニセアカシアの上品な甘さと、柑橘類の爽やかな香りが調和した蜂蜜です。淡い黄金色で、さっぱりとした後味が特徴です。"
-        },
-        {
-            date: "6/5",
-            sources: ["ヤマハギ", "ミカン"],
-            description: "ヤマハギの独特の風味と、ミカンの明るい香りが印象的な蜂蜜です。深い琥珀色で、コクのある味わいが楽しめます。"
-        },
-        {
-            date: "6/12",
-            sources: ["カラスノエンドウ", "シロツメクサ"],
-            description: "カラスノエンドウの濃厚な味わいと、シロツメクサの優しい甘みが特徴的な蜂蜜です。深みのある黄褐色をしています。"
-        },
-        {
-            date: "6/19",
-            sources: ["ソバ", "クリ"],
-            description: "ソバの香ばしい風味と、クリの甘みが絶妙に調和した蜂蜜です。濃い琥珀色で、コクのある味わいが特徴です。"
-        }
+        // {
+        //     date: "5/29",
+        //     sources: ["ニセアカシア", "柑橘類"],
+        //     description: "ニセアカシアの上品な甘さと、柑橘類の爽やかな香りが調和した蜂蜜です。淡い黄金色で、さっぱりとした後味が特徴です。"
+        // },
+        // {
+        //     date: "6/5",
+        //     sources: ["ヤマハギ", "ミカン"],
+        //     description: "ヤマハギの独特の風味と、ミカンの明るい香りが印象的な蜂蜜です。深い琥珀色で、コクのある味わいが楽しめます。"
+        // },
+        // {
+        //     date: "6/12",
+        //     sources: ["カラスノエンドウ", "シロツメクサ"],
+        //     description: "カラスノエンドウの濃厚な味わいと、シロツメクサの優しい甘みが特徴的な蜂蜜です。深みのある黄褐色をしています。"
+        // },
+        // {
+        //     date: "6/19",
+        //     sources: ["ソバ", "クリ"],
+        //     description: "ソバの香ばしい風味と、クリの甘みが絶妙に調和した蜂蜜です。濃い琥珀色で、コクのある味わいが特徴です。"
+        // }
     ];
+
 
     window.showPopup = function(index) {
         const info = honeyInfo[index];
         const content = `
-            <h2>${info.date}の蜂蜜</h2>
-            <h3>蜜源植物: ${info.sources.join(', ')}</h3>
-            <p>${info.description}</p>
+            <div class="popup-header" style="background-image: url('${info.images[0]}');">
+                <h2>${info.date}</h2>
+            </div>
+            <div class="popup-body">
+                <div class="honey-images">
+                    ${info.images.map(img => `<img src="${img}" alt="蜂蜜画像">`).join('')}
+                </div>
+                <h3>${info.sources.join(', ')}</h3>
+                <p>${info.description}</p>
+                <div class="source-plants">
+                    <h4>蜜源植物について</h4>
+                    ${info.sourceImages.map(source => `
+                        <div class="source-plant">
+                            <img src="${source.url}" alt="${source.name}">
+                            <p>${source.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="beekeeper-message">
+                    <h4>養蜂家からの一言</h4>
+                    <p><i>"${info.beeKeeperMessage}"</i></p>
+                </div>
+            </div>
             <button onclick="closePopup()">閉じる</button>
         `;
         document.getElementById('popup-content').innerHTML = content;
