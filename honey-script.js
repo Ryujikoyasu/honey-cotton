@@ -188,9 +188,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('#chat-container button').addEventListener('click', sendMessage);
     
-    document.addEventListener('DOMContentLoaded', function() {
-        // ... 既存のコード ...
+    createBees(100); // 5匹の蜂を生成
     
-        createBees(100); // 5匹の蜂を生成
-    });
 });
