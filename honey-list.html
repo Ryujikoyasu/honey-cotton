@@ -150,13 +150,30 @@
             overflow: hidden;
         }        
         /* 蜂がブンブンとぶアニメーション */
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #e6f3ff;
+        }
         .bee {
             position: absolute;
-            width: 60px;
-            height: 60px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23FFA500"/><circle cx="40" cy="40" r="10" fill="%23333"/><circle cx="60" cy="40" r="10" fill="%23333"/><path d="M30 65 Q50 80 70 65" stroke="%23333" stroke-width="3" fill="none"/><ellipse cx="20" cy="50" rx="15" ry="25" fill="%23FFA500" opacity="0.7"><animate attributeName="rx" values="15;10;15" dur="0.5s" repeatCount="indefinite"/></ellipse><ellipse cx="80" cy="50" rx="15" ry="25" fill="%23FFA500" opacity="0.7"><animate attributeName="rx" values="15;10;15" dur="0.5s" repeatCount="indefinite"/></ellipse></svg>');
+            width: 50px;
+            height: 50px;
             background-size: contain;
-            animation: fly 30s infinite linear;
+            background-repeat: no-repeat;
+            transition: transform 0.5s ease-in-out;
+        }
+        .bee.pair {
+            width: 100px;
+            height: 50px;
+            background-image: url('/api/placeholder/100/50?text=Pair+of+Bees');
+        }
+        .flower {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-image: url('/api/placeholder/40/40?text=Flower');
+            background-size: contain;
         }
 
         @keyframes fly {
@@ -180,6 +197,7 @@
 </head>
 
 <script src="honey-script.js"></script>
+
 <body>
     <header>
         <h1>自然の恵み - 蜂蜜一覧</h1>
@@ -200,7 +218,9 @@
         <div class="honey-grid">
             <!-- この部分は JavaScript で動的に生成されます -->
         </div>
-    
+        
+        <div id="bee-container"></div>
+        
         <div id="calendar"></div>
 
         <div id="chat-container">

@@ -86,6 +86,87 @@ document.addEventListener('DOMContentLoaded', function() {
         // }
     ];
 
+    const beeImages = [
+        '/api/placeholder/50/50?text=Bee1',
+        '/api/placeholder/50/50?text=Bee2',
+        '/api/placeholder/50/50?text=Bee3'
+    ];
+
+    class Bee {
+        constructor(container) {
+            this.element = document.createElement('div');
+            this.element.className = 'bee';
+            this.element.style.backgroundImage = `url(${beeImages[Math.floor(Math.random() * beeImages.length)]})`;
+            this.x = Math.random() * window.innerWidth;
+            this.y = Math.random() * window.innerHeight;
+            this.speedX = (Math.random() - 0.5) * 2;
+            this.speedY = (Math.random() - 0.5) * 2;
+            this.update();
+            container.appendChild(this.element);
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x < 0 || this.x > window.innerWidth - 50) this.speedX *= -1;
+            if (this.y < 0 || this.y > window.innerHeight - 50) this.speedY *= -1;
+
+            this.element.style.left = `${this.x}px`;
+            this.element.style.top = `${this.y}px`;
+            this.element.style.transform = `rotate(${Math.atan2(this.speedY, this.speedX)}rad)`;
+        }
+    }
+
+    class BeePair extends Bee {
+        constructor(container) {
+            super(container);
+            this.element.classList.add('pair');
+            this.speedX *= 0.5;
+            this.speedY *= 0.5;
+        }
+    }
+
+    function createFlowers(count) {
+        const container = document.getElementById('bee-container');
+        for (let i = 0; i < count; i++) {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.style.left = `${Math.random() * (window.innerWidth - 40)}px`;
+            flower.style.top = `${Math.random() * (window.innerHeight - 40)}px`;
+            container.appendChild(flower);
+        }
+    }
+
+    function init() {
+        const container = document.getElementById('bee-container');
+        const bees = [];
+        const beeCount = 5;
+        const pairCount = 2;
+
+        createFlowers(10);
+
+        for (let i = 0; i < beeCount; i++) {
+            bees.push(new Bee(container));
+        }
+
+        for (let i = 0; i < pairCount; i++) {
+            bees.push(new BeePair(container));
+        }
+
+        function animate() {
+            bees.forEach(bee => bee.update());
+            requestAnimationFrame(animate);
+        }
+
+        setTimeout(() => {
+            animate();
+        }, 2000);
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+
+
     function generateHoneyGrid() {
         const honeyGrid = document.querySelector('.honey-grid');
         honeyInfo.forEach((honey, index) => {
@@ -152,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generateHoneyGrid();
     generateCalendar();
-    createBees(5); // 5匹の蜂を生成
+    // createBees(5); // 5匹の蜂を生成
 
     window.sendMessage = function() {
         const userInput = document.getElementById('user-input').value;
@@ -169,17 +250,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('user-input').value = '';
     }
     
-    function createBees(count) {
-        const container = document.getElementById('bee-container');
-        for (let i = 0; i < count; i++) {
-            const bee = document.createElement('div');
-            bee.className = 'bee';
-            bee.style.top = `${Math.random() * (window.innerHeight - 60)}px`;
-            bee.style.left = `${Math.random() * (window.innerWidth - 60)}px`;
-            bee.style.animationDelay = `${Math.random() * 30}s`;
-            container.appendChild(bee);
-        }
-    }
+    // function createBees(count) {
+    //     const container = document.getElementById('bee-container');
+    //     for (let i = 0; i < count; i++) {
+    //         const bee = document.createElement('div');
+    //         bee.className = 'bee';
+    //         bee.style.top = `${Math.random() * (window.innerHeight - 60)}px`;
+    //         bee.style.left = `${Math.random() * (window.innerWidth - 60)}px`;
+    //         bee.style.animationDelay = `${Math.random() * 30}s`;
+    //         container.appendChild(bee);
+    //     }
+    // }
 
     document.querySelectorAll('.honey-item').forEach((item, index) => {
         item.addEventListener('click', () => showPopup(index));
