@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generateHoneyGrid();
     generateCalendar();
-    createBees(10); // 5匹の蜂を生成
+    createBees(5); // 5匹の蜂を生成
 
     window.sendMessage = function() {
         const userInput = document.getElementById('user-input').value;
@@ -170,17 +170,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function createBees(count) {
-        const container = document.querySelector('.content');
+        const container = document.getElementById('bee-container');
         for (let i = 0; i < count; i++) {
             const bee = document.createElement('div');
             bee.className = 'bee';
-            bee.style.top = `${Math.random() * 100}vh`;
-            bee.style.left = `${Math.random() * 100}vw`;
-            bee.style.animationDelay = `${Math.random() * 15}s`;
+            bee.style.top = `${Math.random() * (window.innerHeight - 60)}px`;
+            bee.style.left = `${Math.random() * (window.innerWidth - 60)}px`;
+            bee.style.animationDelay = `${Math.random() * 30}s`;
             container.appendChild(bee);
         }
     }
-
 
     document.querySelectorAll('.honey-item').forEach((item, index) => {
         item.addEventListener('click', () => showPopup(index));
