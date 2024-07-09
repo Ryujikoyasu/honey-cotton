@@ -167,6 +167,20 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById('user-input').value = '';
     }
+    
+    function createBees(count) {
+        const container = document.querySelector('.content');
+        for (let i = 0; i < count; i++) {
+            const bee = document.createElement('div');
+            bee.className = 'bee';
+            bee.style.top = `${Math.random() * 100}vh`;
+            bee.style.left = `${Math.random() * 100}vw`;
+            bee.style.animationDelay = `${Math.random() * 15}s`;
+            container.appendChild(bee);
+        }
+    }
+
+
 
     document.querySelectorAll('.honey-item').forEach((item, index) => {
         item.addEventListener('click', () => showPopup(index));
@@ -174,4 +188,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('#chat-container button').addEventListener('click', sendMessage);
     
+    document.addEventListener('DOMContentLoaded', function() {
+        // ... 既存のコード ...
+    
+        createBees(5); // 5匹の蜂を生成
+    });
 });
