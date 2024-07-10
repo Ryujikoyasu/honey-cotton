@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <h3>${info.sources.join('、')}</h3>
           <p>${info.description}</p>
           <div class="source-plants">
-            <h4>蜜源植物について</h4>
+            <h3 class="source-plants-title">蜜源植物について</h3>
             <div class="source-plant-images">
               ${info.sourceImages.map(source => `
                 <div class="source-plant">

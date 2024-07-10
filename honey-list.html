@@ -120,21 +120,24 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-bottom: 10px;
         }
-        .source-plants {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        .source-plant {
-            width: 45%;
+        .source-plants-title {
+            font-size: 1.5em;
             margin-bottom: 20px;
             text-align: center;
         }
+        .source-plant-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .source-plant {
+            text-align: center;
+            margin: 10px;
+            width: calc(50% - 20px); /* 2列レイアウト用 */
+        }
         .source-plant img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
         }
         .beekeeper-message {
             background-color: #fff;
@@ -196,18 +199,6 @@
             background-repeat: no-repeat;
             transition: transform 0.5s ease-in-out;
         }
-        /* .bee.pair {
-            width: 100px;
-            height: 50px;
-            background-image: url('/api/placeholder/100/50?text=Pair+of+Bees');
-        } */
-        /* .flower {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-image: url('/api/placeholder/40/40?text=Flower');
-            background-size: contain;
-        } */
 
         @keyframes fly {
             0% {
