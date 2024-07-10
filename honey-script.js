@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
             this.element.style.backgroundImage = `url(${beeImages[Math.floor(Math.random() * beeImages.length)]})`;
             this.x = Math.random() * window.innerWidth;
             this.y = Math.random() * window.innerHeight;
-            this.angle = Math.random() * Math.PI * 2;
-            this.speed = Math.random() * 2 + 1;
-            this.turnSpeed = (Math.random() - 0.5) * 0.1;
+            this.angle = Math.random() * Math.PI;
+            this.speed = Math.random() * 2;
+            this.turnSpeed = (Math.random() - 0.5) * 0.5;
             this.lastUpdate = Date.now();
             this.update();
             container.appendChild(this.element);
@@ -220,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generateHoneyGrid();
     generateCalendar();
-    // createBees(5); // 5匹の蜂を生成
 
     window.sendMessage = function() {
         const userInput = document.getElementById('user-input').value;
@@ -236,18 +235,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById('user-input').value = '';
     }
-    
-    // function createBees(count) {
-    //     const container = document.getElementById('bee-container');
-    //     for (let i = 0; i < count; i++) {
-    //         const bee = document.createElement('div');
-    //         bee.className = 'bee';
-    //         bee.style.top = `${Math.random() * (window.innerHeight - 60)}px`;
-    //         bee.style.left = `${Math.random() * (window.innerWidth - 60)}px`;
-    //         bee.style.animationDelay = `${Math.random() * 30}s`;
-    //         container.appendChild(bee);
-    //     }
-    // }
 
     document.querySelectorAll('.honey-item').forEach((item, index) => {
         item.addEventListener('click', () => showPopup(index));
