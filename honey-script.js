@@ -87,9 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const beeImages = [
-        '/api/placeholder/50/50?text=Bee1',
-        '/api/placeholder/50/50?text=Bee2',
-        '/api/placeholder/50/50?text=Bee3'
+        'static/images/bee1.png',
+        'static/images/bee2.png',
+        'static/images/bee3.png'
     ];
 
     class Bee {
