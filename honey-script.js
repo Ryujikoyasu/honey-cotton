@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 "/api/placeholder/300/300?text=商品外観"
             ],
             sourceImages: [
-                {url: "/api/placeholder/200/200?text=クローバー", description: "クローバーの花は、優しい甘さと香りを持つ蜜を生み出し、養蜂家に愛されています。"},
-                {url: "/api/placeholder/200/200?text=りんご", description: "りんごの花は、淡い香りと軽やかな甘さを持つ蜜を提供し、果樹園の春を象徴します。"}
+                {url: "static/images/honey_plant/clover.png", description: "クローバーの花は、優しい甘さと香りを持つ蜜を生み出し、養蜂家に愛されています。"},
+                {url: "static/images/honey_plant/apple.png", description: "りんごの花は、淡い香りと軽やかな甘さを持つ蜜を提供し、果樹園の春を象徴します。"}
             ],
             beeKeeperMessage: "クローバーの優しさとりんごの爽やかさが絶妙なハーモニーを奏でる、春の味覚の傑作です。",
             color: "#FFB90F"
