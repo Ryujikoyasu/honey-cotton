@@ -99,8 +99,8 @@ document.addEventListener('DOMContentLoaded', function() {
             this.element.style.backgroundImage = `url(${beeImages[Math.floor(Math.random() * beeImages.length)]})`;
             this.x = Math.random() * window.innerWidth;
             this.y = Math.random() * window.innerHeight;
-            this.speedX = (Math.random() - 0.5) * 2;
-            this.speedY = (Math.random() - 0.5) * 2;
+            this.speedX = (Math.random() - 0.5);
+            this.speedY = (Math.random() - 0.5);
             this.update();
             container.appendChild(this.element);
         }
