@@ -159,17 +159,18 @@ document.addEventListener('DOMContentLoaded', function() {
     window.showPopup = function(index) {
         const info = honeyInfo[index];
         const content = `
-          <div class="popup-header" style="background-image: url('${info.images[0]}');">
-            <h2>${info.date}の蜂蜜</h2>
+        <div class="popup-header" style="background-image: url('${info.images[0]}');">
+          <h2>${info.date}の蜂蜜</h2>
+        </div>
+        <div class="popup-body">
+          <div class="honey-images">
+            ${info.images.map(img => `<img src="${img}" alt="蜂蜜画像">`).join('')}
           </div>
-          <div class="popup-body">
-            <div class="honey-images">
-              ${info.images.map(img => `<img src="${img}" alt="蜂蜜画像">`).join('')}
-            </div>
-            <h3>${info.sources.join('、')}</h3>
-            <p>${info.description}</p>
-            <div class="source-plants">
-              <h4>蜜源植物について</h4>
+          <h3>${info.sources.join('、')}</h3>
+          <p>${info.description}</p>
+          <div class="source-plants">
+            <h4>蜜源植物について</h4>
+            <div class="source-plant-images">
               ${info.sourceImages.map(source => `
                 <div class="source-plant">
                   <img src="${source.url}" alt="${source.name}">
@@ -177,16 +178,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               `).join('')}
             </div>
-            <div class="beekeeper-message">
-              <h4>養蜂家からの一言</h4>
-              <p><i>"${info.beeKeeperMessage}"</i></p>
-            </div>
           </div>
-          <button onclick="closePopup()">閉じる</button>
+          <div class="beekeeper-message">
+            <h4>養蜂家からの一言</h4>
+            <p><i>"${info.beeKeeperMessage}"</i></p>
+          </div>
+        </div>
+        <button onclick="closePopup()">閉じる</button>
         `;
         document.getElementById('popup-content').innerHTML = content;
         document.getElementById('popup').style.display = 'block';
-      }
+       }
+       
 
 
     window.closePopup = function() {
