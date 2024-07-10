@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.x = Math.random() * window.innerWidth;
             this.y = Math.random() * window.innerHeight;
             this.speedX = (Math.random() - 0.5);
-            this.speedY = (Math.random() - 0.5);
+            this.speedY = (Math.random() - 0.5) / 3;
             this.update();
             container.appendChild(this.element);
         }
@@ -118,41 +118,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    class BeePair extends Bee {
-        constructor(container) {
-            super(container);
-            this.element.classList.add('pair');
-            this.speedX *= 0.5;
-            this.speedY *= 0.5;
-        }
-    }
+    // class BeePair extends Bee {
+    //     constructor(container) {
+    //         super(container);
+    //         this.element.classList.add('pair');
+    //         this.speedX *= 0.5;
+    //         this.speedY *= 0.5;
+    //     }
+    // }
 
-    function createFlowers(count) {
-        const container = document.getElementById('bee-container');
-        for (let i = 0; i < count; i++) {
-            const flower = document.createElement('div');
-            flower.className = 'flower';
-            flower.style.left = `${Math.random() * (window.innerWidth - 40)}px`;
-            flower.style.top = `${Math.random() * (window.innerHeight - 40)}px`;
-            container.appendChild(flower);
-        }
-    }
+    // function createFlowers(count) {
+    //     const container = document.getElementById('bee-container');
+    //     for (let i = 0; i < count; i++) {
+    //         const flower = document.createElement('div');
+    //         flower.className = 'flower';
+    //         flower.style.left = `${Math.random() * (window.innerWidth - 40)}px`;
+    //         flower.style.top = `${Math.random() * (window.innerHeight - 40)}px`;
+    //         container.appendChild(flower);
+    //     }
+    // }
 
     function init() {
         const container = document.getElementById('bee-container');
         const bees = [];
         const beeCount = 5;
-        const pairCount = 2;
-
-        createFlowers(10);
+        // const pairCount = 2;
+        container.style.zIndex = -1;
+        // createFlowers(10);
 
         for (let i = 0; i < beeCount; i++) {
             bees.push(new Bee(container));
         }
 
-        for (let i = 0; i < pairCount; i++) {
-            bees.push(new BeePair(container));
-        }
+        // for (let i = 0; i < pairCount; i++) {
+        //     bees.push(new BeePair(container));
+        // }
 
         function animate() {
             bees.forEach(bee => bee.update());
