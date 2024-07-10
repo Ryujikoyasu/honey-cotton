@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             this.element.style.left = `${this.x}px`;
             this.element.style.top = `${this.y}px`;
-            this.element.style.transform = `rotate(${Math.atan2(this.speedY, this.speedX)}rad)`;
+            // this.element.style.transform = `rotate(${Math.atan2(this.speedY, this.speedX)}rad)`;
         }
     }
 
@@ -143,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const bees = [];
         const beeCount = 5;
         // const pairCount = 2;
-        container.style.zIndex = -1;
         // createFlowers(10);
 
         for (let i = 0; i < beeCount; i++) {
