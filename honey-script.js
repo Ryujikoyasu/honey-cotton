@@ -99,59 +99,47 @@ document.addEventListener('DOMContentLoaded', function() {
             this.element.style.backgroundImage = `url(${beeImages[Math.floor(Math.random() * beeImages.length)]})`;
             this.x = Math.random() * window.innerWidth;
             this.y = Math.random() * window.innerHeight;
-            this.speedX = (Math.random() - 0.5);
-            this.speedY = (Math.random() - 0.5) / 2;
+            this.angle = Math.random() * Math.PI * 2;
+            this.speed = Math.random() * 2 + 1;
+            this.turnSpeed = (Math.random() - 0.5) * 0.1;
+            this.lastUpdate = Date.now();
             this.update();
             container.appendChild(this.element);
         }
 
         update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
+            const now = Date.now();
+            const deltaTime = (now - this.lastUpdate) / 1000;
+            this.lastUpdate = now;
 
-            if (this.x < 0 || this.x > window.innerWidth - 50) this.speedX *= -1;
-            if (this.y < 0 || this.y > window.innerHeight - 50) this.speedY *= -1;
+            // 角度を少しずつ変更
+            this.angle += this.turnSpeed * deltaTime;
+            
+            // 新しい位置を計算
+            this.x += Math.cos(this.angle) * this.speed * deltaTime * 60;
+            this.y += Math.sin(this.angle) * this.speed * deltaTime * 60;
 
+            // 画面の端に到達したら反対側に移動
+            if (this.x < 0) this.x = window.innerWidth;
+            if (this.x > window.innerWidth) this.x = 0;
+            if (this.y < 0) this.y = window.innerHeight;
+            if (this.y > window.innerHeight) this.y = 0;
+
+            // 位置と回転を更新
             this.element.style.left = `${this.x}px`;
             this.element.style.top = `${this.y}px`;
-            // this.element.style.transform = `rotate(${Math.atan2(this.speedY, this.speedX)}rad)`;
+            this.element.style.transform = `rotate(${this.angle}rad)`;
         }
     }
-
-    // class BeePair extends Bee {
-    //     constructor(container) {
-    //         super(container);
-    //         this.element.classList.add('pair');
-    //         this.speedX *= 0.5;
-    //         this.speedY *= 0.5;
-    //     }
-    // }
-
-    // function createFlowers(count) {
-    //     const container = document.getElementById('bee-container');
-    //     for (let i = 0; i < count; i++) {
-    //         const flower = document.createElement('div');
-    //         flower.className = 'flower';
-    //         flower.style.left = `${Math.random() * (window.innerWidth - 40)}px`;
-    //         flower.style.top = `${Math.random() * (window.innerHeight - 40)}px`;
-    //         container.appendChild(flower);
-    //     }
-    // }
 
     function init() {
         const container = document.getElementById('bee-container');
         const bees = [];
         const beeCount = 5;
-        // const pairCount = 2;
-        // createFlowers(10);
 
         for (let i = 0; i < beeCount; i++) {
             bees.push(new Bee(container));
         }
-
-        // for (let i = 0; i < pairCount; i++) {
-        //     bees.push(new BeePair(container));
-        // }
 
         function animate() {
             bees.forEach(bee => bee.update());
