@@ -159,10 +159,10 @@ document.addEventListener('DOMContentLoaded', function() {
             requestAnimationFrame(animate);
         }
 
-        setTimeout(() => {
-            animate();
-        }, 2000);
+        animate();
     }
+
+    init();
 
     document.addEventListener('DOMContentLoaded', init);
 
