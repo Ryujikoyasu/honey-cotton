@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.x = Math.random() * window.innerWidth;
             this.y = Math.random() * window.innerHeight;
             this.speedX = (Math.random() - 0.5);
-            this.speedY = (Math.random() - 0.5) / 3;
+            this.speedY = (Math.random() - 0.5) / 2;
             this.update();
             container.appendChild(this.element);
         }
