@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 "/api/placeholder/300/300?text=商品外観"
             ],
             sourceImages: [
-                {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
-                {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
+                {url: "static/images/honey_plant/sakura.png", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
+                {url: "static/images/honey_plant/renge.png", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
             ],
             beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。",
             color: "#FFD700"
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 "/api/placeholder/300/300?text=商品外観"
             ],
             sourceImages: [
-                {url: "/api/placeholder/200/200?text=アカシア", description: "アカシアの花は、清涼感のある香りと繊細な味わいを持つ蜜を生み出します。"},
-                {url: "/api/placeholder/200/200?text=菜の花", description: "菜の花は、春の田園風景を彩る黄色い花で、その蜜は軽やかな甘さが特徴です。"}
+                {url: "static/images/honey_plant/akasia.png", description: "アカシアの花は、清涼感のある香りと繊細な味わいを持つ蜜を生み出します。"},
+                {url: "static/images/honey_plant/nanohana.png", description: "菜の花は、春の田園風景を彩る黄色い花で、その蜜は軽やかな甘さが特徴です。"}
             ],
             beeKeeperMessage: "アカシアの清涼感と菜の花の明るさが調和した、春の陽気を感じられる蜂蜜です。",
             color: "#FFC125"
