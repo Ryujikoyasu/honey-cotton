@@ -1,90 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const honeyInfo = [
-        {
-            date: "5/1",
-            sources: ["さくら", "れんげ"],
-            description: "さくらの淡いピンク色と、れんげの優しい甘みが特徴的な蜂蜜です。さくらの香りが春の訪れを感じさせます。",
-            images: [
-                "/api/placeholder/300/300?text=さくら蜂蜜",
-                "/api/placeholder/300/300?text=れんげ蜂蜜",
-                "/api/placeholder/300/300?text=商品外観"
-            ],
-            sourceImages: [
-                {url: "static/images/honey_plant/sakura.png", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
-                {url: "static/images/honey_plant/renge.png", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
-            ],
-            beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。",
-            color: "#FFD700"
-        },
-        {
-            date: "5/8",
-            sources: ["アカシア", "菜の花"],
-            description: "アカシアの爽やかな香りと、菜の花の明るい黄色が印象的な蜂蜜です。クセがなく、さっぱりとした味わいが特徴です。",
-            images: [
-                "/api/placeholder/300/300?text=アカシア蜂蜜",
-                "/api/placeholder/300/300?text=菜の花蜂蜜",
-                "/api/placeholder/300/300?text=商品外観"
-            ],
-            sourceImages: [
-                {url: "static/images/honey_plant/akasia.png", description: "アカシアの花は、清涼感のある香りと繊細な味わいを持つ蜜を生み出します。"},
-                {url: "static/images/honey_plant/nanohana.png", description: "菜の花は、春の田園風景を彩る黄色い花で、その蜜は軽やかな甘さが特徴です。"}
-            ],
-            beeKeeperMessage: "アカシアの清涼感と菜の花の明るさが調和した、春の陽気を感じられる蜂蜜です。",
-            color: "#FFC125"
-        },
-        {
-            date: "5/15",
-            sources: ["クローバー", "りんご"],
-            description: "クローバーのまろやかな甘さと、りんごの軽やかな酸味が調和した蜂蜜です。淡い琥珀色で、香りも豊かです。",
-            images: [
-                "/api/placeholder/300/300?text=クローバー蜂蜜",
-                "/api/placeholder/300/300?text=りんご蜂蜜",
-                "/api/placeholder/300/300?text=商品外観"
-            ],
-            sourceImages: [
-                {url: "static/images/honey_plant/clover.png", description: "クローバーの花は、優しい甘さと香りを持つ蜜を生み出し、養蜂家に愛されています。"},
-                {url: "static/images/honey_plant/apple.png", description: "りんごの花は、淡い香りと軽やかな甘さを持つ蜜を提供し、果樹園の春を象徴します。"}
-            ],
-            beeKeeperMessage: "クローバーの優しさとりんごの爽やかさが絶妙なハーモニーを奏でる、春の味覚の傑作です。",
-            color: "#FFB90F"
-        },
-        
-        // {
-        //     date: "5/22",
-        //     sources: ["トチノキ", "ライラック"],
-        //     description: "トチノキの濃厚な味わいと、ライラックの華やかな香りが特徴的な蜂蜜です。深みのある琥珀色をしています。",
-        //     images: [
-        //         "/api/placeholder/300/300?text=さくら蜂蜜",
-        //         "/api/placeholder/300/300?text=れんげ蜂蜜",
-        //         "/api/placeholder/300/300?text=商品外観"
-        //     ],
-        //     sourceImages: [
-        //         {url: "/api/placeholder/200/200?text=さくら", description: "さくらの花は、春の象徴として知られ、その蜜は淡い色合いと軽やかな甘さが特徴です。"},
-        //         {url: "/api/placeholder/200/200?text=れんげ", description: "れんげの花は、春の田園風景に欠かせない存在で、その蜜は優しい甘さと芳醇な香りを持ちます。"}
-        //     ],
-        //     beeKeeperMessage: "春の訪れを告げる桜と、のどかな田園風景を彩るれんげ。この二つの花の蜜が織りなす味わいは、まさに春の恵みそのものです。"
-        // },
-        // {
-        //     date: "5/29",
-        //     sources: ["ニセアカシア", "柑橘類"],
-        //     description: "ニセアカシアの上品な甘さと、柑橘類の爽やかな香りが調和した蜂蜜です。淡い黄金色で、さっぱりとした後味が特徴です。"
-        // },
-        // {
-        //     date: "6/5",
-        //     sources: ["ヤマハギ", "ミカン"],
-        //     description: "ヤマハギの独特の風味と、ミカンの明るい香りが印象的な蜂蜜です。深い琥珀色で、コクのある味わいが楽しめます。"
-        // },
-        // {
-        //     date: "6/12",
-        //     sources: ["カラスノエンドウ", "シロツメクサ"],
-        //     description: "カラスノエンドウの濃厚な味わいと、シロツメクサの優しい甘みが特徴的な蜂蜜です。深みのある黄褐色をしています。"
-        // },
-        // {
-        //     date: "6/19",
-        //     sources: ["ソバ", "クリ"],
-        //     description: "ソバの香ばしい風味と、クリの甘みが絶妙に調和した蜂蜜です。濃い琥珀色で、コクのある味わいが特徴です。"
-        // }
-    ];
+    let honeyInfo = [];
+    // Fetch the honey data from the JSON file
+    fetch('honey-history.json')
+    .then(response => response.json())
+    .then(data => {
+        honeyInfo = processHoneyData(data);
+        initializePage();
+    })
+    .catch(error => console.error('Error loading honey data:', error));
+
+    function processHoneyData(data) {
+        // Group the data by year and month
+        const groupedData = data.reduce((acc, item) => {
+            const [year, month] = item.時期.split('年');
+            const key = `${year}年${month}`;
+            if (!acc[key]) {
+                acc[key] = [];
+            }
+            acc[key].push(item);
+            return acc;
+        }, {});
+
+        // Convert grouped data to the format expected by the existing code
+        return Object.entries(groupedData).map(([date, items]) => {
+            const sources = [...new Set(items.flatMap(item => item.蜜源植物.split('，')))];
+            return {
+                date: date,
+                sources: sources,
+                description: `${date}の蜂蜜です。主な蜜源植物は${sources.join('、')}です。`,
+                images: [
+                    "/api/placeholder/300/300?text=蜂蜜画像1",
+                    "/api/placeholder/300/300?text=蜂蜜画像2",
+                    "/api/placeholder/300/300?text=商品外観"
+                ],
+                sourceImages: sources.map(source => ({
+                    url: `static/images/honey_plant/${source}.png`,
+                    description: `${source}は、この時期に咲く重要な蜜源植物です。`
+                })),
+                beeKeeperMessage: items[0].ひとこと || `${date}の蜂蜜は、${sources.join('と')}の花の香りが特徴的です。`,
+                color: `#${Math.floor(Math.random()*16777215).toString(16)}` // Random color
+            };
+        });
+    }
+
+    function initializePage() {
+        generateHoneyGrid();
+        generateCalendar();
+        initBees();
+    }
+
 
     const beeImages = [
         'static/images/bee1.png',
@@ -143,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function generateHoneyGrid() {
         const honeyGrid = document.querySelector('.honey-grid');
+        honeyGrid.innerHTML = ''; // Clear existing content
         honeyInfo.forEach((honey, index) => {
             const honeyItem = document.createElement('div');
             honeyItem.className = 'honey-item';
@@ -207,9 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
         calendarHTML += '</table>';
         calendar.innerHTML = calendarHTML;
     }
-
-    generateHoneyGrid();
-    generateCalendar();
+    
 
     window.sendMessage = function() {
         const userInput = document.getElementById('user-input').value;
