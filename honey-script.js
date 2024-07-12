@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     let honeyInfo = [];
     // Fetch the honey data from the JSON file
-    fetch('honey-history.json')
+    fetch('../knowledge/honey-history.json')
     .then(response => response.json())
     .then(data => {
         honeyInfo = processHoneyData(data);
