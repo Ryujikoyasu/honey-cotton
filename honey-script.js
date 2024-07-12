@@ -1,13 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     let honeyInfo = [];
-    // Fetch the honey data from the JSON file
-    fetch('../knowledge/honey-history.json')
-    .then(response => response.json())
-    .then(data => {
-        honeyInfo = processHoneyData(data);
+    let plantInfo = {};
+
+    // Fetch the honey data and plant info
+    Promise.all([
+        fetch('./knowledge/honey-history.json').then(response => response.json()),
+        fetch('./knowledge/honey-plant2.json').then(response => response.json())
+    ])
+    .then(([honeyData, plantData]) => {
+        plantInfo = plantData.honeyTypes.reduce((acc, plant) => {
+            acc[plant.name] = plant;
+            return acc;
+        }, {});
+        honeyInfo = processHoneyData(honeyData);
         initializePage();
     })
-    .catch(error => console.error('Error loading honey data:', error));
+    .catch(error => console.error('Error loading data:', error));
+  
+
 
     function processHoneyData(data) {
         // Group the data by year and month
@@ -33,11 +43,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     "/api/placeholder/300/300?text=蜂蜜画像2",
                     "/api/placeholder/300/300?text=商品外観"
                 ],
-                sourceImages: sources.map(source => ({
-                    url: `static/images/honey_plant/${source}.png`,
-                    description: `${source}は、この時期に咲く重要な蜜源植物です。`
-                })),
+                sourceImages: sources.map(source => {
+                    const plant = plantInfo[source];
+                    let description = `${source}は、この時期に咲く重要な蜜源植物です。`;
+                    if (plant) {
+                        description = `${source}は${plant.harvestSeason}に収穫され、開花期間は${plant.bloomingPeriod}です。${plant.description}`;
+                    }
+                    return {
+                        url: `static/images/honey_plant/${source}.png`,
+                        description: description
+                    };
+                }),
                 beeKeeperMessage: items[0].ひとこと || `${date}の蜂蜜は、${sources.join('と')}の花の香りが特徴的です。`,
+                sommelierComment: items[0].ソムリエコメント || '準備中です',
                 color: `#${Math.floor(Math.random()*16777215).toString(16)}` // Random color
             };
         });
@@ -147,6 +165,10 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="beekeeper-message">
             <h4>養蜂家からの一言</h4>
             <p><i>"${info.beeKeeperMessage}"</i></p>
+          </div>
+          <div class="sommelier-message">
+            <h4>ソムリエからの一言</h4>
+            <p><i>"${info.sommelierComment || '準備中です'}"</i></p>
           </div>
         </div>
         <button onclick="closePopup()">閉じる</button>
